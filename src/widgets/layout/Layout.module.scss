@@ -1,0 +1,42 @@
+.container {
+  max-width: 1024px;
+  min-width: 360px;
+  margin: 24px auto;
+  border: 1px solid #000;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: 80vh;
+}
+
+.sidebar {
+  border-right: 1px solid #000;
+  padding: 8px 0;
+}
+
+.menuList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menuList li a {
+  display: block;
+  padding: 6px 12px;
+  text-transform: capitalize;
+}
+
+.active {
+  background: #eaeaea;
+}
+
+.main {
+  padding: 16px 24px;
+}
+
+@media (max-width: 640px) {
+  .container { grid-template-columns: 1fr; }
+  .sidebar { border-right: none; border-bottom: 1px solid #000; }
+}
+
+
+

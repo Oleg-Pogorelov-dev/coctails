@@ -1,0 +1,77 @@
+.wrapper {
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  padding: 16px;
+}
+
+.headerRow {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 24px;
+}
+
+.leftCol {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.title {
+  margin: 0;
+}
+
+.meta {
+  display: flex;
+  gap: 12px;
+  color: #666;
+  flex-wrap: wrap;
+}
+
+.instructions h3 {
+  margin: 0 0 4px 0;
+}
+
+.ingredientsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ingredientsList li {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
+  padding: 2px 0;
+}
+
+.thumbBox {
+  justify-self: end;
+  align-self: start;
+  border: 1px solid #000;
+  width: 260px;
+  height: 260px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.thumbBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  .headerRow {
+    grid-template-columns: 1fr;
+  }
+  .thumbBox {
+    justify-self: start;
+    width: 220px;
+    height: 220px;
+  }
+  .ingredientsList li {
+    grid-template-columns: 1fr;
+  }
+}

@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 /** @type {import('webpack').Configuration} */
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production';
+  const publicPath = process.env.PUBLIC_PATH || (isProd ? '/' : '/');
 
   return {
     entry: path.resolve(__dirname, 'src/index.tsx'),
@@ -13,7 +14,7 @@ module.exports = (env, argv) => {
       filename: isProd ? 'js/[name].[contenthash].js' : 'js/[name].js',
       chunkFilename: isProd ? 'js/[name].[contenthash].chunk.js' : 'js/[name].chunk.js',
       clean: true,
-      publicPath: isProd ? './' : '/',
+      publicPath,
     },
     devtool: isProd ? 'source-map' : 'eval-cheap-module-source-map',
     resolve: {

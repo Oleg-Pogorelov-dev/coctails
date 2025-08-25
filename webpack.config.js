@@ -13,7 +13,7 @@ module.exports = (env, argv) => {
       filename: isProd ? 'js/[name].[contenthash].js' : 'js/[name].js',
       chunkFilename: isProd ? 'js/[name].[contenthash].chunk.js' : 'js/[name].chunk.js',
       clean: true,
-      publicPath: '/',
+      publicPath: isProd ? './' : '/',
     },
     devtool: isProd ? 'source-map' : 'eval-cheap-module-source-map',
     resolve: {
